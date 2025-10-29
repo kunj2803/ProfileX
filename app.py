@@ -189,10 +189,10 @@ if st.session_state.uploaded_df is not None:
             # --- Column Summary ---
             st.subheader("🔍 Column Details")
             info_df = pd.DataFrame({
-                "Column": df.columns,
-                "Non-Null Count": df.notnull().sum().values,
-                "Missing Count": df.isnull().sum().values,
-                "Dtype": df.dtypes.values
+                "Column": df_processed.columns,
+                "Non-Null Count": df_processed.notnull().sum().values,
+                "Missing Count": df_processed.isnull().sum().values,
+                "Dtype": df_processed.dtypes.values
             })
             st.dataframe(info_df, use_container_width=True)
             st.markdown("---")
